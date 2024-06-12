@@ -1,0 +1,19 @@
+2024-06-12 10:14:00.044 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/DeleteFilmById/Delete-Film-By-Id/1 - -
+2024-06-12 10:14:00.048 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 10:14:00.049 +07:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-06-12 10:14:00.050 +07:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-06-12 10:14:00.051 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/DeleteFilmById/Delete-Film-By-Id/1 - - - 405 0 - 7.6252ms
+2024-06-12 10:14:27.587 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - -
+2024-06-12 10:14:27.589 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 10:14:27.590 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-12 10:14:27.591 +07:00 [INF] Route matched with {action = "GetAllActors", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllActors() on controller web.Controllers.ActorsController (web).
+2024-06-12 10:14:27.595 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 10:14:27.605 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName], [f].[FilmId], [f].[ActorId]
+FROM [Actors] AS [a]
+LEFT JOIN [FilmActors] AS [f] ON [a].[Id] = [f].[ActorId]
+ORDER BY [a].[Id], [f].[FilmId]
+2024-06-12 10:14:27.607 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.ActorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 10:14:27.609 +07:00 [INF] Executed action web.Controllers.ActorsController.GetAllActors (web) in 15.6631ms
+2024-06-12 10:14:27.610 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-12 10:14:27.611 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - - - 200 - application/json;+charset=utf-8 23.4267ms

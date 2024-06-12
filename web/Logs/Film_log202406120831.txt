@@ -1,0 +1,18 @@
+2024-06-12 08:31:33.344 +07:00 [INF] User profile is available. Using 'C:\Users\Dell-Mew\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-12 08:31:34.738 +07:00 [INF] Now listening on: https://localhost:7289
+2024-06-12 08:31:34.739 +07:00 [INF] Now listening on: http://localhost:5201
+2024-06-12 08:31:34.742 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-12 08:31:34.743 +07:00 [INF] Hosting environment: Development
+2024-06-12 08:31:34.744 +07:00 [INF] Content root path: D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\
+2024-06-12 08:31:40.566 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2024-06-12 08:31:41.181 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 624.7233ms
+2024-06-12 08:31:41.237 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2024-06-12 08:31:41.253 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2024-06-12 08:31:41.261 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 13742 application/javascript;+charset=utf-8 24.1189ms
+2024-06-12 08:31:41.338 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 86.7796ms
+2024-06-12 08:31:41.418 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2024-06-12 08:31:41.688 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 269.9838ms
+2024-06-12 08:31:56.823 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7289/api/User/Login application/json;+charset=utf-8 50
+2024-06-12 08:31:57.702 +07:00 [INF] Executing endpoint 'web.Controllers.UserController.Login (web)'
+2024-06-12 08:31:57.751 +07:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(web.Models.Domain.LoginRequestDTO) on controller web.Controllers.UserController (web).
+2024-06-12 08:31:59.545 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'FilmDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None

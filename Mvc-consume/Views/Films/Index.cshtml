@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Mvc_consume.Models.FilmViewModel>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+	<a asp-action="Create" asp-controller="Films">Create New</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>
+				Name
+			</th>
+			<th>
+				Description
+			</th>
+			<th>
+				Date
+			</th>
+			<th>
+				Genre
+			</th>
+			<th>
+				Rate
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Id)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Description)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Date)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Genre)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Rate)
+				</td>
+				<td>
+					@Html.ActionLink("Edit", "Edit", new { id = item.Id }) | 
+					@* <a asp-action="Edit" asp-controller="Films" asp-route-id="@item.Id">edit</a> *@
+					@Html.ActionLink("Details", "Details", new { id = item.Id }) |
+					@* @Html.ActionLink("Delete", "Delete", new { id = item.Id }) *@
+					<a asp-action="Delete" asp-controller="Films" asp-route-id="@item.Id">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+
+				@* 	https://www.youtube.com/watch?v=2Q9Uh-5O8Sk *@

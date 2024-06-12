@@ -1,0 +1,23 @@
+2024-06-12 10:53:00.881 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - -
+2024-06-12 10:53:00.899 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 10:53:00.901 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-12 10:53:00.906 +07:00 [INF] Route matched with {action = "GetAllFilms", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllFilms(System.String, System.String, System.String, Boolean) on controller web.Controllers.FilmsController (web).
+2024-06-12 10:53:00.916 +07:00 [INF] GetAll Film Action method was invoked
+2024-06-12 10:53:00.917 +07:00 [WRN] This is a warning log
+2024-06-12 10:53:00.918 +07:00 [ERR] This is a error log
+2024-06-12 10:53:01.094 +07:00 [WRN] No store type was specified for the decimal property 'Rate' on entity type 'Films'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-06-12 10:53:01.166 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 10:53:01.299 +07:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-06-12 10:53:01.346 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId], [f1].[DirectorId]
+FROM [Films] AS [f]
+LEFT JOIN [FilmActors] AS [f0] ON [f].[Id] = [f0].[FilmId]
+LEFT JOIN [FilmDirectors] AS [f1] ON [f].[Id] = [f1].[FilmId]
+ORDER BY [f].[Id], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId]
+2024-06-12 10:53:01.428 +07:00 [INF] Finished GetAllFilm request with data[{"Id":1,"Name":"Avengers","Description":"Mavels","Date":"2024-05-24T12:38:19.164","Genre":"none","Rate":5.00,"Directors":[],"Actors":[]},{"Id":2,"Name":"DC","Description":"DCuniver","Date":"2024-06-11T09:09:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]}]
+2024-06-12 10:53:01.430 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.FilmIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 10:53:01.432 +07:00 [INF] Executed action web.Controllers.FilmsController.GetAllFilms (web) in 523.8767ms
+2024-06-12 10:53:01.433 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-12 10:53:01.434 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - - - 200 - application/json;+charset=utf-8 552.8714ms
+2024-06-12 10:53:03.100 +07:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7289/api/Films/DeleteFilmById/Delete-Film-By-Id2 - -
+2024-06-12 10:53:03.106 +07:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7289/api/Films/DeleteFilmById/Delete-Film-By-Id2 - - - 404 0 - 6.1764ms
