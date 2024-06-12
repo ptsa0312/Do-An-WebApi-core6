@@ -1,6 +1,0 @@
-2024-06-12 09:17:52.488 +07:00 [INF] User profile is available. Using 'C:\Users\Dell-Mew\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-2024-06-12 09:17:53.928 +07:00 [INF] Now listening on: https://localhost:7289
-2024-06-12 09:17:53.929 +07:00 [INF] Now listening on: http://localhost:5201
-2024-06-12 09:17:53.934 +07:00 [INF] Application started. Press Ctrl+C to shut down.
-2024-06-12 09:17:53.935 +07:00 [INF] Hosting environment: Development
-2024-06-12 09:17:53.935 +07:00 [INF] Content root path: D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\

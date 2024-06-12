@@ -2,6 +2,7 @@
 using Mvc_consume.Models;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
+using System.Net.Mime;
 using System.Text;
 
 namespace Mvc_consume.Controllers
@@ -15,6 +16,13 @@ namespace Mvc_consume.Controllers
         public static string EditUrl = "https://localhost:7289/api/Directors/Update-Director-By-Id/";
         public static string DeleteUrl = "https://localhost:7289/api/Directors/Delete-Director-By-Id/";
 
+
+		private readonly IHttpClientFactory _httpclienttFactory;
+
+		public DirectorsController(IHttpClientFactory httpclienttFactory)
+		{
+			_httpclienttFactory = httpclienttFactory;
+		}
 		public async Task<IActionResult> Index()
 		{
 			var Directors = await GetDirectors();
@@ -76,5 +84,53 @@ namespace Mvc_consume.Controllers
 			}
 			return View(director);
 		}
-	}
+
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int Id)
+        {
+            DirectorViewModel reponseDirec = new DirectorViewModel();
+            var client = _httpclienttFactory.CreateClient();
+            var httpreponseMess = await client.GetAsync("https://localhost:7289/api/Directors/Get-Director-By-Id/" + Id);
+            httpreponseMess.EnsureSuccessStatusCode();
+            reponseDirec = await httpreponseMess.Content.ReadFromJsonAsync<DirectorViewModel>();
+            ViewBag.Directors = reponseDirec;
+
+            FilmViewModel reponseFilm = new FilmViewModel();
+            var httpreponseFilm = await client.GetAsync("https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/" + Id);
+            httpreponseFilm.EnsureSuccessStatusCode();
+            reponseFilm = await httpreponseFilm.Content.ReadFromJsonAsync<FilmViewModel>();
+            ViewBag.Films = reponseFilm;
+
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit([FromRoute] int Id, EditDirectorVM direcFilmVM)
+        {
+            try
+            {
+                var client = _httpclienttFactory.CreateClient();
+                var httpRequestMess = new HttpRequestMessage()
+                {
+                    Method = HttpMethod.Put,
+                    RequestUri = new Uri("https://localhost:7289/api/Directors/Get-Director-By-Id/" + Id),
+                    Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(direcFilmVM), Encoding.UTF8,
+                        MediaTypeNames.Application.Json)
+                };
+
+                var httpReponseMess = await client.SendAsync(httpRequestMess);
+                httpReponseMess.EnsureSuccessStatusCode();
+                var reponse = await httpReponseMess.Content.ReadFromJsonAsync<AddDirectorVM>();
+                if (reponse != null)
+                {
+                    return RedirectToAction("Index", "Films");
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+            return View();
+        }
+    }
 }

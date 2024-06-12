@@ -4,6 +4,7 @@ namespace Mvc_consume.Models
 {
     public class EditActorVM
     {
+        public int? Id { get; set; }
         public string? FirstName { get; set; }
 
         public string? LastName { get; set; }
@@ -11,9 +12,5 @@ namespace Mvc_consume.Models
         public DateTime DateOfBirth { get; set; }
 
         public List<int>? Film { get; set; }
-    }
-    public class ActorIdDTO : EditActorVM
-    {
-        public int? Id { get; set; }
     }
 }

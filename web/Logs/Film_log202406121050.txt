@@ -1,2 +1,0 @@
-2024-06-12 10:50:00.902 +07:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7289/api/Films/DeleteFilmById/Delete-Film-By-Id2 - -
-2024-06-12 10:50:00.910 +07:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7289/api/Films/DeleteFilmById/Delete-Film-By-Id2 - - - 404 0 - 7.8356ms

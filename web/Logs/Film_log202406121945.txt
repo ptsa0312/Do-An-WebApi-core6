@@ -1,0 +1,184 @@
+2024-06-12 19:45:02.724 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7289/api/User/Login application/json;+charset=utf-8 50
+2024-06-12 19:45:02.877 +07:00 [INF] Executing endpoint 'web.Controllers.UserController.Login (web)'
+2024-06-12 19:45:02.946 +07:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(web.Models.Domain.LoginRequestDTO) on controller web.Controllers.UserController (web).
+2024-06-12 19:45:04.984 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'FilmDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:06.664 +07:00 [INF] Executed DbCommand (154ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-12 19:45:07.072 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-12 19:45:07.320 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.Domain.LoginResponseDTO'.
+2024-06-12 19:45:07.357 +07:00 [INF] Executed action web.Controllers.UserController.Login (web) in 4398.3839ms
+2024-06-12 19:45:07.361 +07:00 [INF] Executed endpoint 'web.Controllers.UserController.Login (web)'
+2024-06-12 19:45:07.382 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7289/api/User/Login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8 4658.5566ms
+2024-06-12 19:45:09.732 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - -
+2024-06-12 19:45:09.745 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 19:45:09.746 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-12 19:45:09.749 +07:00 [INF] Route matched with {action = "GetAllActors", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllActors() on controller web.Controllers.ActorsController (web).
+2024-06-12 19:45:09.982 +07:00 [WRN] No store type was specified for the decimal property 'Rate' on entity type 'Films'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-06-12 19:45:10.053 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:10.213 +07:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName], [f].[FilmId], [f].[ActorId]
+FROM [Actors] AS [a]
+LEFT JOIN [FilmActors] AS [f] ON [a].[Id] = [f].[ActorId]
+ORDER BY [a].[Id], [f].[FilmId]
+2024-06-12 19:45:10.260 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.ActorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 19:45:10.282 +07:00 [INF] Executed action web.Controllers.ActorsController.GetAllActors (web) in 531.3916ms
+2024-06-12 19:45:10.284 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-12 19:45:10.285 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - - - 200 - application/json;+charset=utf-8 553.8565ms
+2024-06-12 19:45:12.022 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-Actor-By-Id/1 - -
+2024-06-12 19:45:12.027 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 19:45:12.028 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetActorById (web)'
+2024-06-12 19:45:12.033 +07:00 [INF] Route matched with {action = "GetActorById", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetActorById(Int32) on controller web.Controllers.ActorsController (web).
+2024-06-12 19:45:12.057 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:12.088 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName]
+FROM [Actors] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-06-12 19:45:12.094 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Actors'.
+2024-06-12 19:45:12.114 +07:00 [INF] Executed action web.Controllers.ActorsController.GetActorById (web) in 77.8281ms
+2024-06-12 19:45:12.116 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetActorById (web)'
+2024-06-12 19:45:12.118 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-Actor-By-Id/1 - - - 200 - application/json;+charset=utf-8 96.0504ms
+2024-06-12 19:45:14.435 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - -
+2024-06-12 19:45:14.437 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 19:45:14.439 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 19:45:14.441 +07:00 [INF] Route matched with {action = "GetAllDirectors", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllDirectors() on controller web.Controllers.DirectorsController (web).
+2024-06-12 19:45:14.445 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:14.467 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName], [f].[FilmId], [f].[DirectorId]
+FROM [Directors] AS [d]
+LEFT JOIN [FilmDirectors] AS [f] ON [d].[Id] = [f].[DirectorId]
+ORDER BY [d].[Id], [f].[FilmId]
+2024-06-12 19:45:14.481 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.DirectorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 19:45:14.484 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetAllDirectors (web) in 41.6925ms
+2024-06-12 19:45:14.485 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 19:45:14.486 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - - - 200 - application/json;+charset=utf-8 51.1712ms
+2024-06-12 19:45:15.622 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-Director-By-Id/1 - -
+2024-06-12 19:45:15.625 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 19:45:15.627 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetDirectorById (web)'
+2024-06-12 19:45:15.632 +07:00 [INF] Route matched with {action = "GetDirectorById", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDirectorById(Int32) on controller web.Controllers.DirectorsController (web).
+2024-06-12 19:45:15.636 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:15.649 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName]
+FROM [Directors] AS [d]
+WHERE [d].[Id] = @__id_0
+2024-06-12 19:45:15.654 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Directors'.
+2024-06-12 19:45:15.656 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetDirectorById (web) in 22.2326ms
+2024-06-12 19:45:15.658 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetDirectorById (web)'
+2024-06-12 19:45:15.659 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-Director-By-Id/1 - - - 200 - application/json;+charset=utf-8 36.8793ms
+2024-06-12 19:45:19.912 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-Director-By-Id/2 - -
+2024-06-12 19:45:19.913 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 19:45:19.914 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetDirectorById (web)'
+2024-06-12 19:45:19.915 +07:00 [INF] Route matched with {action = "GetDirectorById", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDirectorById(Int32) on controller web.Controllers.DirectorsController (web).
+2024-06-12 19:45:19.919 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:19.933 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName]
+FROM [Directors] AS [d]
+WHERE [d].[Id] = @__id_0
+2024-06-12 19:45:19.937 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Directors'.
+2024-06-12 19:45:19.939 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetDirectorById (web) in 21.5429ms
+2024-06-12 19:45:19.943 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetDirectorById (web)'
+2024-06-12 19:45:19.946 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-Director-By-Id/2 - - - 200 - application/json;+charset=utf-8 34.1337ms
+2024-06-12 19:45:22.718 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - -
+2024-06-12 19:45:22.719 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 19:45:22.720 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-12 19:45:22.727 +07:00 [INF] Route matched with {action = "GetAllFilms", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllFilms(System.String, System.String, System.String, Boolean) on controller web.Controllers.FilmsController (web).
+2024-06-12 19:45:22.731 +07:00 [INF] GetAll Film Action method was invoked
+2024-06-12 19:45:22.732 +07:00 [WRN] This is a warning log
+2024-06-12 19:45:22.734 +07:00 [ERR] This is a error log
+2024-06-12 19:45:22.737 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:22.775 +07:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-06-12 19:45:22.793 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId], [f1].[DirectorId]
+FROM [Films] AS [f]
+LEFT JOIN [FilmActors] AS [f0] ON [f].[Id] = [f0].[FilmId]
+LEFT JOIN [FilmDirectors] AS [f1] ON [f].[Id] = [f1].[FilmId]
+ORDER BY [f].[Id], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId]
+2024-06-12 19:45:22.832 +07:00 [INF] Finished GetAllFilm request with data[{"Id":1,"Name":"Avengers","Description":"Mavels","Date":"2024-05-24T12:38:19.164","Genre":"none","Rate":5.00,"Directors":[],"Actors":[]},{"Id":2,"Name":"DC","Description":"DCuniver","Date":"2024-06-11T09:09:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]},{"Id":3,"Name":"Disney","Description":"Cartoon","Date":"2024-06-12T11:00:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]}]
+2024-06-12 19:45:22.834 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.FilmIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 19:45:22.837 +07:00 [INF] Executed action web.Controllers.FilmsController.GetAllFilms (web) in 108.2875ms
+2024-06-12 19:45:22.840 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-12 19:45:22.841 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - - - 200 - application/json;+charset=utf-8 123.6041ms
+2024-06-12 19:45:24.068 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/1 - -
+2024-06-12 19:45:24.071 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 19:45:24.073 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-12 19:45:24.075 +07:00 [INF] Route matched with {action = "GetFilmById", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFilmById(Int32) on controller web.Controllers.FilmsController (web).
+2024-06-12 19:45:24.078 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:24.089 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate]
+FROM [Films] AS [f]
+WHERE [f].[Id] = @__id_0
+2024-06-12 19:45:24.094 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Films'.
+2024-06-12 19:45:24.098 +07:00 [INF] Executed action web.Controllers.FilmsController.GetFilmById (web) in 20.2986ms
+2024-06-12 19:45:24.099 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-12 19:45:24.100 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/1 - - - 200 - application/json;+charset=utf-8 32.3211ms
+2024-06-12 19:45:26.355 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/1 - -
+2024-06-12 19:45:26.356 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-12 19:45:26.358 +07:00 [INF] Route matched with {action = "GetFilmById", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFilmById(Int32) on controller web.Controllers.FilmsController (web).
+2024-06-12 19:45:26.361 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:26.365 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate]
+FROM [Films] AS [f]
+WHERE [f].[Id] = @__id_0
+2024-06-12 19:45:26.367 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Films'.
+2024-06-12 19:45:26.370 +07:00 [INF] Executed action web.Controllers.FilmsController.GetFilmById (web) in 10.2341ms
+2024-06-12 19:45:26.371 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-12 19:45:26.372 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/1 - - - 200 - application/json;+charset=utf-8 17.1193ms
+2024-06-12 19:45:26.433 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - -
+2024-06-12 19:45:26.436 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-12 19:45:26.437 +07:00 [INF] Route matched with {action = "GetAllActors", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllActors() on controller web.Controllers.ActorsController (web).
+2024-06-12 19:45:26.440 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:26.445 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName], [f].[FilmId], [f].[ActorId]
+FROM [Actors] AS [a]
+LEFT JOIN [FilmActors] AS [f] ON [a].[Id] = [f].[ActorId]
+ORDER BY [a].[Id], [f].[FilmId]
+2024-06-12 19:45:26.447 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.ActorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 19:45:26.448 +07:00 [INF] Executed action web.Controllers.ActorsController.GetAllActors (web) in 9.4714ms
+2024-06-12 19:45:26.450 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-12 19:45:26.452 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - - - 200 - application/json;+charset=utf-8 19.5554ms
+2024-06-12 19:45:26.465 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - -
+2024-06-12 19:45:26.466 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 19:45:26.467 +07:00 [INF] Route matched with {action = "GetAllDirectors", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllDirectors() on controller web.Controllers.DirectorsController (web).
+2024-06-12 19:45:26.471 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:26.475 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName], [f].[FilmId], [f].[DirectorId]
+FROM [Directors] AS [d]
+LEFT JOIN [FilmDirectors] AS [f] ON [d].[Id] = [f].[DirectorId]
+ORDER BY [d].[Id], [f].[FilmId]
+2024-06-12 19:45:26.478 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.DirectorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 19:45:26.480 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetAllDirectors (web) in 9.0576ms
+2024-06-12 19:45:26.481 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 19:45:26.483 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - - - 200 - application/json;+charset=utf-8 17.9019ms
+2024-06-12 19:45:28.253 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - -
+2024-06-12 19:45:28.255 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 19:45:28.256 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-12 19:45:28.257 +07:00 [INF] Route matched with {action = "GetAllActors", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllActors() on controller web.Controllers.ActorsController (web).
+2024-06-12 19:45:28.260 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:28.270 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName], [f].[FilmId], [f].[ActorId]
+FROM [Actors] AS [a]
+LEFT JOIN [FilmActors] AS [f] ON [a].[Id] = [f].[ActorId]
+ORDER BY [a].[Id], [f].[FilmId]
+2024-06-12 19:45:28.272 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.ActorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 19:45:28.274 +07:00 [INF] Executed action web.Controllers.ActorsController.GetAllActors (web) in 14.8383ms
+2024-06-12 19:45:28.275 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-12 19:45:28.277 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - - - 200 - application/json;+charset=utf-8 23.4817ms
+2024-06-12 19:45:31.324 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - -
+2024-06-12 19:45:31.325 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 19:45:31.327 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 19:45:31.330 +07:00 [INF] Route matched with {action = "GetAllDirectors", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllDirectors() on controller web.Controllers.DirectorsController (web).
+2024-06-12 19:45:31.335 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 19:45:31.340 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName], [f].[FilmId], [f].[DirectorId]
+FROM [Directors] AS [d]
+LEFT JOIN [FilmDirectors] AS [f] ON [d].[Id] = [f].[DirectorId]
+ORDER BY [d].[Id], [f].[FilmId]
+2024-06-12 19:45:31.343 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.DirectorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 19:45:31.344 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetAllDirectors (web) in 10.1277ms
+2024-06-12 19:45:31.345 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 19:45:31.347 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - - - 200 - application/json;+charset=utf-8 22.9875ms

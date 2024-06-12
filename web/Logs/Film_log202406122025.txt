@@ -1,0 +1,39 @@
+2024-06-12 20:25:03.562 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - -
+2024-06-12 20:25:03.569 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 20:25:03.570 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 20:25:03.571 +07:00 [INF] Route matched with {action = "GetAllDirectors", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllDirectors() on controller web.Controllers.DirectorsController (web).
+2024-06-12 20:25:03.575 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 20:25:03.581 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName], [f].[FilmId], [f].[DirectorId]
+FROM [Directors] AS [d]
+LEFT JOIN [FilmDirectors] AS [f] ON [d].[Id] = [f].[DirectorId]
+ORDER BY [d].[Id], [f].[FilmId]
+2024-06-12 20:25:03.583 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.DirectorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 20:25:03.585 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetAllDirectors (web) in 10.9844ms
+2024-06-12 20:25:03.586 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 20:25:03.587 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - - - 200 - application/json;+charset=utf-8 25.4316ms
+2024-06-12 20:25:04.648 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-Actor-By-Id/1 - -
+2024-06-12 20:25:04.650 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetActorById (web)'
+2024-06-12 20:25:04.651 +07:00 [INF] Route matched with {action = "GetActorById", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetActorById(Int32) on controller web.Controllers.ActorsController (web).
+2024-06-12 20:25:04.655 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 20:25:04.660 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName]
+FROM [Actors] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-06-12 20:25:04.662 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Actors'.
+2024-06-12 20:25:04.663 +07:00 [INF] Executed action web.Controllers.ActorsController.GetActorById (web) in 8.6427ms
+2024-06-12 20:25:04.664 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetActorById (web)'
+2024-06-12 20:25:04.664 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-Actor-By-Id/1 - - - 200 - application/json;+charset=utf-8 15.8472ms
+2024-06-12 20:25:04.670 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - -
+2024-06-12 20:25:04.671 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 20:25:04.671 +07:00 [INF] Route matched with {action = "GetAllDirectors", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllDirectors() on controller web.Controllers.DirectorsController (web).
+2024-06-12 20:25:04.674 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 20:25:04.678 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName], [f].[FilmId], [f].[DirectorId]
+FROM [Directors] AS [d]
+LEFT JOIN [FilmDirectors] AS [f] ON [d].[Id] = [f].[DirectorId]
+ORDER BY [d].[Id], [f].[FilmId]
+2024-06-12 20:25:04.680 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.DirectorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 20:25:04.681 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetAllDirectors (web) in 8.5834ms
+2024-06-12 20:25:04.682 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 20:25:04.682 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - - - 200 - application/json;+charset=utf-8 12.1985ms

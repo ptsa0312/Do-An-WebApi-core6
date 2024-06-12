@@ -1,0 +1,4 @@
+2024-06-12 20:42:00.569 +07:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7289/api/Actors/Get-Actor-By-Id/1 application/json;+charset=utf-8 96
+2024-06-12 20:42:00.574 +07:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-06-12 20:42:00.575 +07:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-06-12 20:42:00.576 +07:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7289/api/Actors/Get-Actor-By-Id/1 application/json;+charset=utf-8 96 - 405 0 - 6.8227ms

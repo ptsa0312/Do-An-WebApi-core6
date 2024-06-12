@@ -1,0 +1,88 @@
+2024-06-12 20:13:03.828 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2024-06-12 20:13:04.471 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 649.9213ms
+2024-06-12 20:13:04.518 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2024-06-12 20:13:04.524 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 13742 application/javascript;+charset=utf-8 6.0493ms
+2024-06-12 20:13:04.687 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2024-06-12 20:13:04.803 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 115.6810ms
+2024-06-12 20:13:04.887 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2024-06-12 20:13:05.051 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 163.6223ms
+2024-06-12 20:13:06.181 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7289/api/User/Login application/json;+charset=utf-8 33
+2024-06-12 20:13:06.267 +07:00 [INF] Executing endpoint 'web.Controllers.UserController.Login (web)'
+2024-06-12 20:13:06.310 +07:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(web.Models.Domain.LoginRequestDTO) on controller web.Controllers.UserController (web).
+2024-06-12 20:13:06.563 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-06-12 20:13:06.592 +07:00 [INF] Executed action web.Controllers.UserController.Login (web) in 274.5539ms
+2024-06-12 20:13:06.599 +07:00 [INF] Executed endpoint 'web.Controllers.UserController.Login (web)'
+2024-06-12 20:13:06.605 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7289/api/User/Login application/json;+charset=utf-8 33 - 400 - application/problem+json;+charset=utf-8 424.4543ms
+2024-06-12 20:13:07.728 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - -
+2024-06-12 20:13:07.736 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-12 20:13:07.738 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-12 20:13:07.741 +07:00 [INF] Route matched with {action = "GetAllFilms", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllFilms(System.String, System.String, System.String, Boolean) on controller web.Controllers.FilmsController (web).
+2024-06-12 20:13:07.755 +07:00 [INF] GetAll Film Action method was invoked
+2024-06-12 20:13:07.757 +07:00 [WRN] This is a warning log
+2024-06-12 20:13:07.760 +07:00 [ERR] This is a error log
+2024-06-12 20:13:08.489 +07:00 [WRN] No store type was specified for the decimal property 'Rate' on entity type 'Films'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-06-12 20:13:08.677 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 20:13:09.218 +07:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-06-12 20:13:09.676 +07:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId], [f1].[DirectorId]
+FROM [Films] AS [f]
+LEFT JOIN [FilmActors] AS [f0] ON [f].[Id] = [f0].[FilmId]
+LEFT JOIN [FilmDirectors] AS [f1] ON [f].[Id] = [f1].[FilmId]
+ORDER BY [f].[Id], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId]
+2024-06-12 20:13:09.814 +07:00 [INF] Finished GetAllFilm request with data[{"Id":1,"Name":"Avengers","Description":"Mavels","Date":"2024-05-24T12:38:19.164","Genre":"none","Rate":5.00,"Directors":[],"Actors":[]},{"Id":2,"Name":"DC","Description":"DCuniver","Date":"2024-06-11T09:09:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]},{"Id":3,"Name":"Disney","Description":"Cartoon","Date":"2024-06-12T11:00:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]}]
+2024-06-12 20:13:09.817 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.FilmIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 20:13:09.819 +07:00 [INF] Executed action web.Controllers.FilmsController.GetAllFilms (web) in 2074.0867ms
+2024-06-12 20:13:09.820 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-12 20:13:09.827 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - - - 200 - application/json;+charset=utf-8 2098.7337ms
+2024-06-12 20:13:11.708 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/1 - -
+2024-06-12 20:13:11.715 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-12 20:13:11.718 +07:00 [INF] Route matched with {action = "GetFilmById", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFilmById(Int32) on controller web.Controllers.FilmsController (web).
+2024-06-12 20:13:11.723 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 20:13:11.797 +07:00 [INF] Executed DbCommand (33ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate]
+FROM [Films] AS [f]
+WHERE [f].[Id] = @__id_0
+2024-06-12 20:13:11.802 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Films'.
+2024-06-12 20:13:11.806 +07:00 [INF] Executed action web.Controllers.FilmsController.GetFilmById (web) in 85.4966ms
+2024-06-12 20:13:11.807 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-12 20:13:11.808 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/1 - - - 200 - application/json;+charset=utf-8 99.7535ms
+2024-06-12 20:13:11.872 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - -
+2024-06-12 20:13:11.874 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-12 20:13:11.876 +07:00 [INF] Route matched with {action = "GetAllActors", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllActors() on controller web.Controllers.ActorsController (web).
+2024-06-12 20:13:11.930 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 20:13:11.945 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName], [f].[FilmId], [f].[ActorId]
+FROM [Actors] AS [a]
+LEFT JOIN [FilmActors] AS [f] ON [a].[Id] = [f].[ActorId]
+ORDER BY [a].[Id], [f].[FilmId]
+2024-06-12 20:13:11.958 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.ActorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 20:13:11.962 +07:00 [INF] Executed action web.Controllers.ActorsController.GetAllActors (web) in 83.6501ms
+2024-06-12 20:13:11.963 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-12 20:13:11.964 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - - - 200 - application/json;+charset=utf-8 92.2206ms
+2024-06-12 20:13:11.981 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - -
+2024-06-12 20:13:11.982 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 20:13:11.984 +07:00 [INF] Route matched with {action = "GetAllDirectors", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllDirectors() on controller web.Controllers.DirectorsController (web).
+2024-06-12 20:13:11.988 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-12 20:13:12.001 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName], [f].[FilmId], [f].[DirectorId]
+FROM [Directors] AS [d]
+LEFT JOIN [FilmDirectors] AS [f] ON [d].[Id] = [f].[DirectorId]
+ORDER BY [d].[Id], [f].[FilmId]
+2024-06-12 20:13:12.013 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.DirectorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-12 20:13:12.016 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetAllDirectors (web) in 30.4183ms
+2024-06-12 20:13:12.017 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-12 20:13:12.018 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - - - 200 - application/json;+charset=utf-8 37.6505ms
+2024-06-12 20:13:30.180 +07:00 [INF] User profile is available. Using 'C:\Users\Dell-Mew\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-12 20:13:30.879 +07:00 [INF] Now listening on: https://localhost:7289
+2024-06-12 20:13:31.213 +07:00 [INF] Now listening on: http://localhost:5201
+2024-06-12 20:13:31.223 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-12 20:13:31.224 +07:00 [INF] Hosting environment: Development
+2024-06-12 20:13:31.225 +07:00 [INF] Content root path: D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\
+2024-06-12 20:13:35.722 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2024-06-12 20:13:36.274 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2024-06-12 20:13:36.274 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2024-06-12 20:13:36.274 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 558.6654ms
+2024-06-12 20:13:36.281 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 13742 application/javascript;+charset=utf-8 7.0181ms
+2024-06-12 20:13:36.410 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 136.2043ms
+2024-06-12 20:13:36.501 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2024-06-12 20:13:36.788 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 286.9377ms

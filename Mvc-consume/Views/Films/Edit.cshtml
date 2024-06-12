@@ -4,35 +4,35 @@
     var listactor = ViewBag.Actors;
     var listdirector = ViewBag.Directors;
 }
-<h4>EditFilmVM</h4>
+<h4>Edit</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit" asp-controller="Films" asp-route-id="@film.Id" method="post" >
+        <form asp-action="Edit" asp-controller="Films" asp-route-id="@film.Id"  >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label> Name </label>
-                <input type="text" name="Name" asp-for="Name" value="@film.Name"/>
+                <label asp-for="Name" class="control-label"> </label>
+                <input type="text" name="Name" asp-for="Name" value="@film.Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label> Description </label>
-                <input type="text" name="Description" asp-for="Description" value="@film.Description" />
+                <label asp-for="Description" class="control-label"> </label>
+                <input type="text" name="Description" asp-for="Description" value="@film.Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label> Date </label>
-                <input type="datetime" name="Date" asp-for="Date" value="@film.Date" />
+                <label asp-for="Date" class="control-label"> </label>
+                <input asp-for="Date" value="@film.Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label> Genre </label>
-                <input type="text" name="Genre" asp-for="Genre" value="@film.Genre" />
+                <label asp-for="Genre" class="control-label"> </label>
+                <input type="text" name="Genre" asp-for="Genre" value="@film.Genre" class="form-control" />
                 <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label> Rate </label>
-                <input type="number" name="Rate" asp-for="Rate" value="@film.Rate" />
+                <label asp-for="Rate" class="control-label"> </label>
+                <input type="number" name="Rate" asp-for="Rate" value="@film.Rate" class="form-control" />
                 <span asp-validation-for="Rate" class="text-danger"></span>
             </div>
             <div class="form-group">
