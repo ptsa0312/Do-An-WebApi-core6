@@ -1,0 +1,231 @@
+2024-06-14 10:29:02.621 +07:00 [INF] User profile is available. Using 'C:\Users\Dell-Mew\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-14 10:29:03.111 +07:00 [INF] Now listening on: https://localhost:7289
+2024-06-14 10:29:03.113 +07:00 [INF] Now listening on: http://localhost:5201
+2024-06-14 10:29:03.119 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-14 10:29:03.121 +07:00 [INF] Hosting environment: Development
+2024-06-14 10:29:03.122 +07:00 [INF] Content root path: D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\
+2024-06-14 10:29:10.569 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2024-06-14 10:29:11.235 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 682.0586ms
+2024-06-14 10:29:11.411 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2024-06-14 10:29:11.418 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 13742 application/javascript;+charset=utf-8 7.4215ms
+2024-06-14 10:29:11.424 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2024-06-14 10:29:11.524 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 99.9899ms
+2024-06-14 10:29:11.590 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2024-06-14 10:29:11.766 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 175.7792ms
+2024-06-14 10:29:19.812 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7289/api/User/Login application/json;+charset=utf-8 50
+2024-06-14 10:29:19.883 +07:00 [INF] Executing endpoint 'web.Controllers.UserController.Login (web)'
+2024-06-14 10:29:19.926 +07:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(web.Models.Domain.LoginRequestDTO) on controller web.Controllers.UserController (web).
+2024-06-14 10:29:21.056 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'FilmDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:21.975 +07:00 [INF] Executed DbCommand (82ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-14 10:29:22.222 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-14 10:29:22.383 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.Domain.LoginResponseDTO'.
+2024-06-14 10:29:22.404 +07:00 [INF] Executed action web.Controllers.UserController.Login (web) in 2470.0372ms
+2024-06-14 10:29:22.408 +07:00 [INF] Executed endpoint 'web.Controllers.UserController.Login (web)'
+2024-06-14 10:29:22.421 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7289/api/User/Login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8 2609.2113ms
+2024-06-14 10:29:25.130 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - -
+2024-06-14 10:29:25.139 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-14 10:29:25.141 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-14 10:29:25.144 +07:00 [INF] Route matched with {action = "GetAllFilms", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllFilms(System.String, System.String, System.String, Boolean) on controller web.Controllers.FilmsController (web).
+2024-06-14 10:29:25.150 +07:00 [INF] GetAll Film Action method was invoked
+2024-06-14 10:29:25.152 +07:00 [WRN] This is a warning log
+2024-06-14 10:29:25.153 +07:00 [ERR] This is a error log
+2024-06-14 10:29:25.270 +07:00 [WRN] No store type was specified for the decimal property 'Rate' on entity type 'Films'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-06-14 10:29:25.316 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:25.409 +07:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-06-14 10:29:25.437 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId], [f1].[DirectorId]
+FROM [Films] AS [f]
+LEFT JOIN [FilmActors] AS [f0] ON [f].[Id] = [f0].[FilmId]
+LEFT JOIN [FilmDirectors] AS [f1] ON [f].[Id] = [f1].[FilmId]
+ORDER BY [f].[Id], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId]
+2024-06-14 10:29:25.502 +07:00 [INF] Finished GetAllFilm request with data[{"Id":3,"Name":"Disney","Description":"Cartoon","Date":"2024-06-12T11:00:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]},{"Id":4,"Name":"CoBaLa","Description":"LaVaCo","Date":"2024-06-14T09:45:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]},{"Id":5,"Name":"SwitHome","Description":"HomeSwit","Date":"2024-06-14T10:13:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]}]
+2024-06-14 10:29:25.504 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.FilmIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 10:29:25.506 +07:00 [INF] Executed action web.Controllers.FilmsController.GetAllFilms (web) in 361.568ms
+2024-06-14 10:29:25.507 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-14 10:29:25.508 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - - - 200 - application/json;+charset=utf-8 378.1605ms
+2024-06-14 10:29:26.641 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/3 - -
+2024-06-14 10:29:26.647 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-14 10:29:26.650 +07:00 [INF] Route matched with {action = "GetFilmById", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFilmById(Int32) on controller web.Controllers.FilmsController (web).
+2024-06-14 10:29:26.665 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:26.677 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate]
+FROM [Films] AS [f]
+WHERE [f].[Id] = @__id_0
+2024-06-14 10:29:26.680 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Films'.
+2024-06-14 10:29:26.684 +07:00 [INF] Executed action web.Controllers.FilmsController.GetFilmById (web) in 32.6847ms
+2024-06-14 10:29:26.685 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-14 10:29:26.687 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/3 - - - 200 - application/json;+charset=utf-8 45.2563ms
+2024-06-14 10:29:26.744 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - -
+2024-06-14 10:29:26.744 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-14 10:29:26.746 +07:00 [INF] Route matched with {action = "GetAllActors", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllActors() on controller web.Controllers.ActorsController (web).
+2024-06-14 10:29:26.751 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:26.765 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName], [f].[FilmId], [f].[ActorId]
+FROM [Actors] AS [a]
+LEFT JOIN [FilmActors] AS [f] ON [a].[Id] = [f].[ActorId]
+ORDER BY [a].[Id], [f].[FilmId]
+2024-06-14 10:29:26.777 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.ActorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 10:29:26.782 +07:00 [INF] Executed action web.Controllers.ActorsController.GetAllActors (web) in 32.9463ms
+2024-06-14 10:29:26.783 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-14 10:29:26.784 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - - - 200 - application/json;+charset=utf-8 40.4250ms
+2024-06-14 10:29:26.801 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - -
+2024-06-14 10:29:26.802 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-14 10:29:26.804 +07:00 [INF] Route matched with {action = "GetAllDirectors", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllDirectors() on controller web.Controllers.DirectorsController (web).
+2024-06-14 10:29:26.806 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:26.820 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName], [f].[FilmId], [f].[DirectorId]
+FROM [Directors] AS [d]
+LEFT JOIN [FilmDirectors] AS [f] ON [d].[Id] = [f].[DirectorId]
+ORDER BY [d].[Id], [f].[FilmId]
+2024-06-14 10:29:26.831 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.DirectorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 10:29:26.835 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetAllDirectors (web) in 30.6871ms
+2024-06-14 10:29:26.836 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-14 10:29:26.837 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - - - 200 - application/json;+charset=utf-8 35.8731ms
+2024-06-14 10:29:28.676 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/3 - -
+2024-06-14 10:29:28.677 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-14 10:29:28.678 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-14 10:29:28.680 +07:00 [INF] Route matched with {action = "GetFilmById", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFilmById(Int32) on controller web.Controllers.FilmsController (web).
+2024-06-14 10:29:28.683 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:28.689 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate]
+FROM [Films] AS [f]
+WHERE [f].[Id] = @__id_0
+2024-06-14 10:29:28.691 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Films'.
+2024-06-14 10:29:28.692 +07:00 [INF] Executed action web.Controllers.FilmsController.GetFilmById (web) in 9.6725ms
+2024-06-14 10:29:28.692 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-14 10:29:28.693 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/3 - - - 200 - application/json;+charset=utf-8 17.1286ms
+2024-06-14 10:29:30.334 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - -
+2024-06-14 10:29:30.337 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-14 10:29:30.338 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-14 10:29:30.339 +07:00 [INF] Route matched with {action = "GetAllDirectors", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllDirectors() on controller web.Controllers.DirectorsController (web).
+2024-06-14 10:29:30.341 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:30.349 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName], [f].[FilmId], [f].[DirectorId]
+FROM [Directors] AS [d]
+LEFT JOIN [FilmDirectors] AS [f] ON [d].[Id] = [f].[DirectorId]
+ORDER BY [d].[Id], [f].[FilmId]
+2024-06-14 10:29:30.351 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.DirectorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 10:29:30.352 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetAllDirectors (web) in 11.9743ms
+2024-06-14 10:29:30.354 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-14 10:29:30.354 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - - - 200 - application/json;+charset=utf-8 20.2559ms
+2024-06-14 10:29:31.375 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-Director-By-Id/1 - -
+2024-06-14 10:29:31.378 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetDirectorById (web)'
+2024-06-14 10:29:31.380 +07:00 [INF] Route matched with {action = "GetDirectorById", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDirectorById(Int32) on controller web.Controllers.DirectorsController (web).
+2024-06-14 10:29:31.383 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:31.391 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName]
+FROM [Directors] AS [d]
+WHERE [d].[Id] = @__id_0
+2024-06-14 10:29:31.394 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Directors'.
+2024-06-14 10:29:31.396 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetDirectorById (web) in 15.0037ms
+2024-06-14 10:29:31.397 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetDirectorById (web)'
+2024-06-14 10:29:31.398 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-Director-By-Id/1 - - - 200 - application/json;+charset=utf-8 22.6082ms
+2024-06-14 10:29:31.406 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/1 - -
+2024-06-14 10:29:31.407 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-14 10:29:31.408 +07:00 [INF] Route matched with {action = "GetFilmById", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFilmById(Int32) on controller web.Controllers.FilmsController (web).
+2024-06-14 10:29:31.410 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:31.414 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate]
+FROM [Films] AS [f]
+WHERE [f].[Id] = @__id_0
+2024-06-14 10:29:47.320 +07:00 [INF] Executed action web.Controllers.FilmsController.GetFilmById (web) in 15910.839ms
+2024-06-14 10:29:47.322 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-14 10:29:47.324 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotImplementedException: The method or operation is not implemented.
+   at web.Repositories.SQLFilmRepository.GetFilmById(Int32 id) in D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\Repositories\SQLFilmRepository.cs:line 55
+   at web.Controllers.FilmsController.GetFilmById(Int32 id) in D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\Controllers\FilmsController.cs:line 46
+   at lambda_method212(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-06-14 10:29:47.364 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/1 - - - 500 - text/plain;+charset=utf-8 15958.1517ms
+2024-06-14 10:29:54.857 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - -
+2024-06-14 10:29:54.860 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-14 10:29:54.860 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-14 10:29:54.861 +07:00 [INF] Route matched with {action = "GetAllActors", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllActors() on controller web.Controllers.ActorsController (web).
+2024-06-14 10:29:54.862 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:54.867 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName], [f].[FilmId], [f].[ActorId]
+FROM [Actors] AS [a]
+LEFT JOIN [FilmActors] AS [f] ON [a].[Id] = [f].[ActorId]
+ORDER BY [a].[Id], [f].[FilmId]
+2024-06-14 10:29:54.869 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.ActorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 10:29:54.871 +07:00 [INF] Executed action web.Controllers.ActorsController.GetAllActors (web) in 9.3554ms
+2024-06-14 10:29:54.872 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-14 10:29:54.874 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - - - 200 - application/json;+charset=utf-8 16.5294ms
+2024-06-14 10:29:55.970 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-Actor-By-Id/1 - -
+2024-06-14 10:29:55.973 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetActorById (web)'
+2024-06-14 10:29:55.976 +07:00 [INF] Route matched with {action = "GetActorById", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetActorById(Int32) on controller web.Controllers.ActorsController (web).
+2024-06-14 10:29:55.978 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:55.986 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName]
+FROM [Actors] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-06-14 10:29:55.989 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Actors'.
+2024-06-14 10:29:55.991 +07:00 [INF] Executed action web.Controllers.ActorsController.GetActorById (web) in 14.5734ms
+2024-06-14 10:29:55.993 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetActorById (web)'
+2024-06-14 10:29:55.993 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-Actor-By-Id/1 - - - 200 - application/json;+charset=utf-8 23.5593ms
+2024-06-14 10:29:56.003 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/1 - -
+2024-06-14 10:29:56.004 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-14 10:29:56.005 +07:00 [INF] Route matched with {action = "GetFilmById", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFilmById(Int32) on controller web.Controllers.FilmsController (web).
+2024-06-14 10:29:56.007 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:29:56.011 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate]
+FROM [Films] AS [f]
+WHERE [f].[Id] = @__id_0
+2024-06-14 10:29:58.324 +07:00 [INF] Executed action web.Controllers.FilmsController.GetFilmById (web) in 2318.0941ms
+2024-06-14 10:29:58.326 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-14 10:29:58.328 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotImplementedException: The method or operation is not implemented.
+   at web.Repositories.SQLFilmRepository.GetFilmById(Int32 id) in D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\Repositories\SQLFilmRepository.cs:line 55
+   at web.Controllers.FilmsController.GetFilmById(Int32 id) in D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\Controllers\FilmsController.cs:line 46
+   at lambda_method212(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-06-14 10:29:58.340 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/1 - - - 500 - text/plain;+charset=utf-8 2336.9589ms

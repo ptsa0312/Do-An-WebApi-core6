@@ -103,3 +103,4 @@ D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\bin\Debug\net6.0\MimeKit.dll
 D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\bin\Debug\net6.0\System.Formats.Asn1.dll
 D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
 D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Bach_khoa_toan_thu\Baitapchung\app\again2\f\web\obj\Debug\net6.0\web.sourcelink.json

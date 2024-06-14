@@ -1,0 +1,3 @@
+2024-06-14 10:28:07.805 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/2 - -
+2024-06-14 10:28:07.815 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetFilmById (web)'
+2024-06-14 10:28:07.816 +07:00 [INF] Route matched with {action = "GetFilmById", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetFilmById(Int32) on controller web.Controllers.FilmsController (web).

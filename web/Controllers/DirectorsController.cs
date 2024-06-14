@@ -22,7 +22,7 @@ namespace web.Controllers
         }
 
         [HttpGet("Get-All-Directors")]
-        //[Authorize(Roles = "Read, Write")]
+       // [Authorize(Roles = "Read, Write")]
         public IActionResult GetAllDirectors()
         {
             var allDirectors = _directorRepository.GetAllDirectors();
@@ -30,7 +30,7 @@ namespace web.Controllers
         }
 
         [HttpGet("Get-Director-By-Id/{id}")]
-        //[Authorize(Roles = "Read, Write")]
+       // [Authorize(Roles = "Read, Write")]
         public IActionResult GetDirectorById(int id)
         {
             var directorWithId = _directorRepository.GetDirectorById(id);
@@ -38,7 +38,7 @@ namespace web.Controllers
         }
 
         [HttpPost("Add-Director")]
-        //[Authorize(Roles = "Write")]
+      //  [Authorize(Roles = "Write")]
         public IActionResult AddDirector([FromBody] DirectorDTO directorDTO)
         {
             var directorAdd = _directorRepository.AddDirector(directorDTO);
@@ -46,7 +46,7 @@ namespace web.Controllers
         }
 
         [HttpPut("Update-Director-By-Id/{id}")]
-        //[Authorize(Roles = "Write")]
+       // [Authorize(Roles = "Write")]
         public IActionResult UpdateDirectorById(int id, [FromBody] DirectorDTO directorDTO)
         {
             var updateDirector = _directorRepository.UpdateDirectorById(id, directorDTO);
@@ -54,7 +54,7 @@ namespace web.Controllers
         }
 
         [HttpDelete("Delete-Director-By-Id/{id}")]
-        //[Authorize(Roles = "Write")]
+       // [Authorize(Roles = "Write")]
         public IActionResult DeleteDirectorById(int id)
         {
             var deleteDirector = _directorRepository.DeleteDirectorById(id);

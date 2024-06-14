@@ -25,7 +25,7 @@ namespace web.Controllers
         }
 
         [HttpGet("Get-All-Films")]
-       // [Authorize(Roles = "Read, Write")]
+      //  [Authorize(Roles = "Read, Write")]
         public IActionResult GetAllFilms([FromQuery] string? filterOn, [FromQuery] string? filterQuery, [FromQuery] string? sortBy, [FromQuery] bool isAscending)
         {
             _logger.LogInformation("GetAll Film Action method was invoked");
@@ -40,7 +40,7 @@ namespace web.Controllers
 
         [HttpGet]
         [Route("Get-Film-By-Id/{id}")]
-       // [Authorize(Roles = "Read, Write")]
+        //[Authorize(Roles = "Read, Write")]
         public IActionResult GetFilmById([FromRoute] int id)
         {
             var filmWithId = _filmRepository.GetFilmById(id);
@@ -62,7 +62,7 @@ namespace web.Controllers
         }
 
         [HttpPut("Update-Film-By-Id/{id}")]
-       // [Authorize(Roles = "Write")]
+      //  [Authorize(Roles = "Write")]
         public IActionResult UpdateFilmById(int id, [FromBody] FilmDTO filmDTO)
         {
             var updateFilm = _filmRepository.UpdateFilmById(id, filmDTO);
@@ -70,7 +70,7 @@ namespace web.Controllers
         }
 
         [HttpDelete("Delete-Film-By-Id/{id}")]
-      //  [Authorize(Roles = "Write")]
+       // [Authorize(Roles = "Write")]
         public IActionResult DeleteFilmById(int id)
         {
             var deleteFilm = _filmRepository.DeleteFilmById(id);

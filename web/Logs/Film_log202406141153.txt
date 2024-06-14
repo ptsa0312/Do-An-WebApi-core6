@@ -1,0 +1,177 @@
+2024-06-14 11:53:00.787 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-Actor-By-Id/1 - -
+2024-06-14 11:53:00.800 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetActorById (web)'
+2024-06-14 11:53:00.809 +07:00 [INF] Route matched with {action = "GetActorById", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetActorById(Int32) on controller web.Controllers.ActorsController (web).
+2024-06-14 11:53:00.820 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:00.846 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName]
+FROM [Actors] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-06-14 11:53:00.862 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Actors'.
+2024-06-14 11:53:00.867 +07:00 [INF] Executed action web.Controllers.ActorsController.GetActorById (web) in 50.122ms
+2024-06-14 11:53:00.874 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetActorById (web)'
+2024-06-14 11:53:00.881 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-Actor-By-Id/1 - - - 200 - application/json;+charset=utf-8 93.3231ms
+2024-06-14 11:53:07.332 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - -
+2024-06-14 11:53:07.338 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-14 11:53:07.341 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-14 11:53:07.346 +07:00 [INF] Route matched with {action = "GetAllDirectors", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllDirectors() on controller web.Controllers.DirectorsController (web).
+2024-06-14 11:53:07.358 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:07.401 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName], [f].[FilmId], [f].[DirectorId]
+FROM [Directors] AS [d]
+LEFT JOIN [FilmDirectors] AS [f] ON [d].[Id] = [f].[DirectorId]
+ORDER BY [d].[Id], [f].[FilmId]
+2024-06-14 11:53:07.410 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.DirectorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 11:53:07.417 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetAllDirectors (web) in 60.3767ms
+2024-06-14 11:53:07.422 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-14 11:53:07.427 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - - - 200 - application/json;+charset=utf-8 95.4313ms
+2024-06-14 11:53:08.792 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-Director-By-Id/1 - -
+2024-06-14 11:53:08.801 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetDirectorById (web)'
+2024-06-14 11:53:08.804 +07:00 [INF] Route matched with {action = "GetDirectorById", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDirectorById(Int32) on controller web.Controllers.DirectorsController (web).
+2024-06-14 11:53:08.817 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:08.837 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName]
+FROM [Directors] AS [d]
+WHERE [d].[Id] = @__id_0
+2024-06-14 11:53:08.848 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Directors'.
+2024-06-14 11:53:08.852 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetDirectorById (web) in 36.9748ms
+2024-06-14 11:53:08.857 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetDirectorById (web)'
+2024-06-14 11:53:08.865 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-Director-By-Id/1 - - - 200 - application/json;+charset=utf-8 73.1815ms
+2024-06-14 11:53:25.487 +07:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7289/api/Directors/Delete-Director-By-Id/4 - -
+2024-06-14 11:53:25.490 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.DeleteDirectorById (web)'
+2024-06-14 11:53:25.500 +07:00 [INF] Route matched with {action = "DeleteDirectorById", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteDirectorById(Int32) on controller web.Controllers.DirectorsController (web).
+2024-06-14 11:53:25.510 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:25.523 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName]
+FROM [Directors] AS [d]
+WHERE [d].[Id] = @__id_0
+2024-06-14 11:53:25.600 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Directors]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2024-06-14 11:53:25.623 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Directors'.
+2024-06-14 11:53:25.626 +07:00 [INF] Executed action web.Controllers.DirectorsController.DeleteDirectorById (web) in 120.9515ms
+2024-06-14 11:53:25.631 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.DeleteDirectorById (web)'
+2024-06-14 11:53:25.634 +07:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7289/api/Directors/Delete-Director-By-Id/4 - - - 200 - application/json;+charset=utf-8 146.4928ms
+2024-06-14 11:53:25.672 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - -
+2024-06-14 11:53:25.677 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-14 11:53:25.682 +07:00 [INF] Route matched with {action = "GetAllActors", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllActors() on controller web.Controllers.ActorsController (web).
+2024-06-14 11:53:25.688 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:25.711 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName], [f].[FilmId], [f].[ActorId]
+FROM [Actors] AS [a]
+LEFT JOIN [FilmActors] AS [f] ON [a].[Id] = [f].[ActorId]
+ORDER BY [a].[Id], [f].[FilmId]
+2024-06-14 11:53:25.726 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.ActorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 11:53:25.735 +07:00 [INF] Executed action web.Controllers.ActorsController.GetAllActors (web) in 47.9461ms
+2024-06-14 11:53:25.738 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-14 11:53:25.743 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - - - 200 - application/json;+charset=utf-8 71.0315ms
+2024-06-14 11:53:28.697 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - -
+2024-06-14 11:53:28.701 +07:00 [INF] Executing endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-14 11:53:28.703 +07:00 [INF] Route matched with {action = "GetAllDirectors", controller = "Directors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllDirectors() on controller web.Controllers.DirectorsController (web).
+2024-06-14 11:53:28.711 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:28.723 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DateOfBirth], [d].[FirstName], [d].[LastName], [f].[FilmId], [f].[DirectorId]
+FROM [Directors] AS [d]
+LEFT JOIN [FilmDirectors] AS [f] ON [d].[Id] = [f].[DirectorId]
+ORDER BY [d].[Id], [f].[FilmId]
+2024-06-14 11:53:28.727 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.DirectorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 11:53:28.731 +07:00 [INF] Executed action web.Controllers.DirectorsController.GetAllDirectors (web) in 20.5437ms
+2024-06-14 11:53:28.732 +07:00 [INF] Executed endpoint 'web.Controllers.DirectorsController.GetAllDirectors (web)'
+2024-06-14 11:53:28.734 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - - - 200 - application/json;+charset=utf-8 36.3038ms
+2024-06-14 11:53:29.688 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - -
+2024-06-14 11:53:29.696 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-14 11:53:29.699 +07:00 [INF] Route matched with {action = "GetAllActors", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllActors() on controller web.Controllers.ActorsController (web).
+2024-06-14 11:53:29.708 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:29.727 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName], [f].[FilmId], [f].[ActorId]
+FROM [Actors] AS [a]
+LEFT JOIN [FilmActors] AS [f] ON [a].[Id] = [f].[ActorId]
+ORDER BY [a].[Id], [f].[FilmId]
+2024-06-14 11:53:29.734 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.ActorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 11:53:29.738 +07:00 [INF] Executed action web.Controllers.ActorsController.GetAllActors (web) in 34.6879ms
+2024-06-14 11:53:29.742 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-14 11:53:29.747 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - - - 200 - application/json;+charset=utf-8 58.5723ms
+2024-06-14 11:53:32.442 +07:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7289/api/Actors/Delete-Actor-By-Id/5 - -
+2024-06-14 11:53:32.445 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.DeleteActorById (web)'
+2024-06-14 11:53:32.458 +07:00 [INF] Route matched with {action = "DeleteActorById", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteActorById(Int32) on controller web.Controllers.ActorsController (web).
+2024-06-14 11:53:32.471 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:32.495 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName]
+FROM [Actors] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-06-14 11:53:32.531 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Actors]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2024-06-14 11:53:32.544 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Actors'.
+2024-06-14 11:53:32.547 +07:00 [INF] Executed action web.Controllers.ActorsController.DeleteActorById (web) in 83.1875ms
+2024-06-14 11:53:32.551 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.DeleteActorById (web)'
+2024-06-14 11:53:32.557 +07:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7289/api/Actors/Delete-Actor-By-Id/5 - - - 200 - application/json;+charset=utf-8 114.6680ms
+2024-06-14 11:53:32.585 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - -
+2024-06-14 11:53:32.589 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-14 11:53:32.592 +07:00 [INF] Route matched with {action = "GetAllActors", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllActors() on controller web.Controllers.ActorsController (web).
+2024-06-14 11:53:32.597 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:32.612 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName], [f].[FilmId], [f].[ActorId]
+FROM [Actors] AS [a]
+LEFT JOIN [FilmActors] AS [f] ON [a].[Id] = [f].[ActorId]
+ORDER BY [a].[Id], [f].[FilmId]
+2024-06-14 11:53:32.619 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.ActorIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 11:53:32.625 +07:00 [INF] Executed action web.Controllers.ActorsController.GetAllActors (web) in 28.7481ms
+2024-06-14 11:53:32.629 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetAllActors (web)'
+2024-06-14 11:53:32.633 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - - - 200 - application/json;+charset=utf-8 47.9400ms
+2024-06-14 11:53:33.850 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - -
+2024-06-14 11:53:33.856 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-14 11:53:33.859 +07:00 [INF] Route matched with {action = "GetAllFilms", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllFilms(System.String, System.String, System.String, Boolean) on controller web.Controllers.FilmsController (web).
+2024-06-14 11:53:33.865 +07:00 [INF] GetAll Film Action method was invoked
+2024-06-14 11:53:33.869 +07:00 [WRN] This is a warning log
+2024-06-14 11:53:33.873 +07:00 [ERR] This is a error log
+2024-06-14 11:53:33.877 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:33.898 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId], [f1].[DirectorId]
+FROM [Films] AS [f]
+LEFT JOIN [FilmActors] AS [f0] ON [f].[Id] = [f0].[FilmId]
+LEFT JOIN [FilmDirectors] AS [f1] ON [f].[Id] = [f1].[FilmId]
+ORDER BY [f].[Id], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId]
+2024-06-14 11:53:33.908 +07:00 [INF] Finished GetAllFilm request with data[{"Id":3,"Name":"Disneyyyyy","Description":"Cartoon","Date":"2024-06-14T11:51:00","Genre":"none","Rate":7.00,"Directors":[],"Actors":[]},{"Id":4,"Name":"CoBaLa","Description":"LaVaCo","Date":"2024-06-14T09:45:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]},{"Id":5,"Name":"SwitHome","Description":"HomeSwit","Date":"2024-06-14T10:13:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]},{"Id":6,"Name":"Phines And Fead","Description":"cartoon","Date":"2024-06-14T11:51:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]}]
+2024-06-14 11:53:33.915 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.FilmIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 11:53:33.919 +07:00 [INF] Executed action web.Controllers.FilmsController.GetAllFilms (web) in 54.3107ms
+2024-06-14 11:53:33.924 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-14 11:53:33.927 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - - - 200 - application/json;+charset=utf-8 76.5287ms
+2024-06-14 11:53:35.772 +07:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7289/api/Films/DeleteFilmById/Delete-Film-By-Id/6 - -
+2024-06-14 11:53:35.774 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.DeleteFilmById (web)'
+2024-06-14 11:53:35.781 +07:00 [INF] Route matched with {action = "DeleteFilmById", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteFilmById(Int32) on controller web.Controllers.FilmsController (web).
+2024-06-14 11:53:35.792 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:35.812 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate]
+FROM [Films] AS [f]
+WHERE [f].[Id] = @__id_0
+2024-06-14 11:53:35.850 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Films]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2024-06-14 11:53:35.859 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Films'.
+2024-06-14 11:53:35.863 +07:00 [INF] Executed action web.Controllers.FilmsController.DeleteFilmById (web) in 73.6913ms
+2024-06-14 11:53:35.868 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.DeleteFilmById (web)'
+2024-06-14 11:53:35.872 +07:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7289/api/Films/DeleteFilmById/Delete-Film-By-Id/6 - - - 200 - application/json;+charset=utf-8 100.2297ms
+2024-06-14 11:53:35.904 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - -
+2024-06-14 11:53:35.908 +07:00 [INF] Executing endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-14 11:53:35.912 +07:00 [INF] Route matched with {action = "GetAllFilms", controller = "Films"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllFilms(System.String, System.String, System.String, Boolean) on controller web.Controllers.FilmsController (web).
+2024-06-14 11:53:35.925 +07:00 [INF] GetAll Film Action method was invoked
+2024-06-14 11:53:35.927 +07:00 [WRN] This is a warning log
+2024-06-14 11:53:35.933 +07:00 [ERR] This is a error log
+2024-06-14 11:53:35.943 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:53:35.965 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Date], [f].[Description], [f].[Genre], [f].[Name], [f].[Rate], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId], [f1].[DirectorId]
+FROM [Films] AS [f]
+LEFT JOIN [FilmActors] AS [f0] ON [f].[Id] = [f0].[FilmId]
+LEFT JOIN [FilmDirectors] AS [f1] ON [f].[Id] = [f1].[FilmId]
+ORDER BY [f].[Id], [f0].[FilmId], [f0].[ActorId], [f1].[FilmId]
+2024-06-14 11:53:35.976 +07:00 [INF] Finished GetAllFilm request with data[{"Id":3,"Name":"Disneyyyyy","Description":"Cartoon","Date":"2024-06-14T11:51:00","Genre":"none","Rate":7.00,"Directors":[],"Actors":[]},{"Id":4,"Name":"CoBaLa","Description":"LaVaCo","Date":"2024-06-14T09:45:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]},{"Id":5,"Name":"SwitHome","Description":"HomeSwit","Date":"2024-06-14T10:13:00","Genre":"none","Rate":0,"Directors":[],"Actors":[]}]
+2024-06-14 11:53:35.983 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[web.Models.Domain.FilmIdDTO, web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-14 11:53:35.988 +07:00 [INF] Executed action web.Controllers.FilmsController.GetAllFilms (web) in 63.5237ms
+2024-06-14 11:53:35.992 +07:00 [INF] Executed endpoint 'web.Controllers.FilmsController.GetAllFilms (web)'
+2024-06-14 11:53:35.995 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - - - 200 - application/json;+charset=utf-8 90.4100ms

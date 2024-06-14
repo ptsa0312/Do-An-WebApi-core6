@@ -96,11 +96,11 @@ namespace Mvc_consume.Controllers
             reponseDirec = await httpreponseMess.Content.ReadFromJsonAsync<DirectorViewModel>();
             ViewBag.Directors = reponseDirec;
 
-            FilmViewModel reponseFilm = new FilmViewModel();
+       /*     FilmViewModel reponseFilm = new FilmViewModel();
             var httpreponseFilm = await client.GetAsync("https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/" + Id);
             httpreponseFilm.EnsureSuccessStatusCode();
             reponseFilm = await httpreponseFilm.Content.ReadFromJsonAsync<FilmViewModel>();
-            ViewBag.Films = reponseFilm;
+            ViewBag.Films = reponseFilm;*/
 
             return View();
         }
@@ -113,7 +113,7 @@ namespace Mvc_consume.Controllers
                 var httpRequestMess = new HttpRequestMessage()
                 {
                     Method = HttpMethod.Put,
-                    RequestUri = new Uri("https://localhost:7289/api/Directors/Get-Director-By-Id/" + Id),
+                    RequestUri = new Uri("https://localhost:7289/api/Directors/Update-Director-By-Id/" + Id),
                     Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(direcFilmVM), Encoding.UTF8,
                         MediaTypeNames.Application.Json)
                 };
@@ -123,7 +123,7 @@ namespace Mvc_consume.Controllers
                 var reponse = await httpReponseMess.Content.ReadFromJsonAsync<AddDirectorVM>();
                 if (reponse != null)
                 {
-                    return RedirectToAction("Index", "Films");
+                    return RedirectToAction("Index", "Directors");
                 }
             }
             catch (Exception ex)
@@ -131,6 +131,22 @@ namespace Mvc_consume.Controllers
                 ViewBag.Error = ex.Message;
             }
             return View();
+        }
+
+        public async Task<IActionResult> Delete([FromRoute] int id)
+        {
+            try
+            {
+                var client = new HttpClient();
+                var httpreponseMess = await client.DeleteAsync("https://localhost:7289/api/Directors/Delete-Director-By-Id/" + id);
+                httpreponseMess.EnsureSuccessStatusCode();
+                return RedirectToAction("Index", "Directors");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+            return View("Index");
         }
     }
 }

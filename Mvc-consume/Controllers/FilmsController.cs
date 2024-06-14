@@ -18,7 +18,7 @@ namespace Mvc_consume.Controllers
 		public static string GetAllurl = "https://localhost:7289/api/Films/GetAllFilms/Get-All-Films";
 		public static string GetIdurl = "https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/";
 		public static string CreateUrl = "https://localhost:7289/api/Films/AddFilm/Add-Film";
-		public static string EditUrl = "https://localhost:7289/api/Films/UpdateFilmById/Update-Film-By-Id/{id}";
+		public static string EditUrl = "https://localhost:7289/api/Films/UpdateFilmById/Update-Film-By-Id/";
 		public static string DeleteUrl = "https://localhost:7289/api/Films/DeleteFilmById/Delete-Film-By-Id/";
 
 		private readonly IHttpClientFactory _httpclienttFactory;
@@ -68,52 +68,13 @@ namespace Mvc_consume.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-		/*	public async Task<IActionResult> Edit(int? Id)
-			{
-				if (Id == null)
-				{
-					return NotFound();
-				}
-				var accessToken = HttpContext.Session.GetString("JWToken");
-				var url = EditUrl + Id;
-				HttpClient client = new HttpClient();
-				client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-
-				string jsonStr = await client.GetStringAsync(url);
-				var res = JsonConvert.DeserializeObject<EditFilmVM>(jsonStr);
-
-				if (res == null)
-				{
-					return NotFound();
-				}
-				return View(res);
-			}
-
-		[HttpPost]
-			[ValidateAntiForgeryToken]
-			public async Task<IActionResult> Edit(int Id , [Bind("Id,Name,Description,Date,Genre,Directors,Actors")] EditFilmVM editFilmVM )
-			{
-				if(Id != editFilmVM.Id)
-				{
-					return NotFound();
-				}
-				var accessToken = HttpContext.Session.GetString("JWToken");
-				var url = EditUrl + Id;
-				HttpClient client = new HttpClient();
-				client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-
-				var StringContent = new StringContent(JsonConvert.SerializeObject(editFilmVM),Encoding.UTF8, "application/json");
-				await client.PutAsync(url, StringContent);
-
-				return RedirectToAction(nameof(Index));
-			}*/
 
 		public async Task<IActionResult> Delete([FromRoute] int id)
 		{
 			try
 			{
 				var client = new HttpClient();
-				var httpreponseMess = await client.DeleteAsync("https://localhost:7289/api/Films/DeleteFilmById/Delete-Film-By-Id" + id);
+				var httpreponseMess = await client.DeleteAsync("https://localhost:7289/api/Films/DeleteFilmById/Delete-Film-By-Id/" + id);
 				httpreponseMess.EnsureSuccessStatusCode();
 				return RedirectToAction("Index", "Films");
 			}
@@ -124,38 +85,6 @@ namespace Mvc_consume.Controllers
 			return View("Index");
 		}
 
-		/*public async Task<IActionResult> Delete(int? id)
-		{
-			if(id == null)
-			{
-				return NotFound();
-			}
-			var accessToken = HttpContext.Session.GetString("JWToken");
-			var url = DeleteUrl + id;
-			HttpClient client = new HttpClient();
-			client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-
-			string jsonStr = await client.GetStringAsync(url);
-			var res = JsonConvert.DeserializeObject<FilmViewModel>(jsonStr);
-
-			if (res == null)
-			{
-				return NotFound();
-			}
-			return View(res);
-		}
-
-		[HttpPost , ActionName("Delete")]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> DeleteComfirmed(int id)
-		{
-			var accessToken = HttpContext.Session.GetString("JWToken");
-			var url = DeleteUrl + id;
-			HttpClient client = new HttpClient();
-			client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-			await client.DeleteAsync(url);
-			return RedirectToAction(nameof (Index));
-		}*/
 
 		public async Task<IActionResult> Details(int? id)
 		{
@@ -176,24 +105,6 @@ namespace Mvc_consume.Controllers
 			}
 			return View(film);
 		}
-
-		/*    public async Task<IActionResult> ListBook(int id)
-			{
-				BookViewModel reponse = new BookViewModel();
-				try
-				{
-					var client = _httpclienttFactory.CreateClient();
-					var HttpreponseMess = await client.GetAsync("https://localhost:7292/api/Book/GetBookById/get-book-by-id/" + id);
-					HttpreponseMess.EnsureSuccessStatusCode();
-					var stringReponseBody = await HttpreponseMess.Content.ReadAsStringAsync();
-					reponse = await HttpreponseMess.Content.ReadFromJsonAsync<BookViewModel>();
-				}
-				catch (Exception ex)
-				{
-					ViewBag.Error = ex.Message;
-				}
-				return View(reponse);
-			}*/
 
 		[HttpGet]
 		public async Task<IActionResult> Edit(int Id)
@@ -227,14 +138,14 @@ namespace Mvc_consume.Controllers
 				var httpRequestMess = new HttpRequestMessage()
 				{
 					Method = HttpMethod.Put,
-					RequestUri = new Uri("https://localhost:7289/api/Films/GetFilmById/Get-Film-By-Id/" + Id),
+					RequestUri = new Uri("https://localhost:7289/api/Films/UpdateFilmById/Update-Film-By-Id/" + Id),
 					Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(editFilmVM), Encoding.UTF8,
 						MediaTypeNames.Application.Json)
 				};
 
 				var httpReponseMess = await client.SendAsync(httpRequestMess);
 				httpReponseMess.EnsureSuccessStatusCode();
-				var reponse = await httpReponseMess.Content.ReadFromJsonAsync<AddFilmVM>();
+				var reponse = await httpReponseMess.Content.ReadFromJsonAsync<FilmViewModel>();
 				if (reponse != null)
 				{
 					return RedirectToAction("Index", "Films");
@@ -246,7 +157,5 @@ namespace Mvc_consume.Controllers
 			}
 			return View();
 		}
-
-
 	}
 }

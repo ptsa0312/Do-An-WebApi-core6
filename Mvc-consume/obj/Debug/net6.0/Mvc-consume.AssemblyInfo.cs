@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mvc-consume")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b43c8d1b8a0117e9ba97a68947a05bed18bfc045")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52ae8fd20bd99d74a369c112aef70e71475f8680")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mvc-consume")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mvc-consume")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

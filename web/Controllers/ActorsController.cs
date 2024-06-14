@@ -54,7 +54,7 @@ namespace web.Controllers
         }
 
         [HttpDelete("Delete-Actor-By-Id/{id}")]
-        //[Authorize(Roles = "Write")]
+       // [Authorize(Roles = "Write")]
         public IActionResult DeleteActorById(int id)
         {
             var deleteActor = _actorRepository.DeleteActorById(id);

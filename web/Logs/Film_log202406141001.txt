@@ -1,0 +1,52 @@
+2024-06-14 10:01:08.882 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7289/api/User/Login application/json;+charset=utf-8 50
+2024-06-14 10:01:08.964 +07:00 [INF] Executing endpoint 'web.Controllers.UserController.Login (web)'
+2024-06-14 10:01:09.009 +07:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(web.Models.Domain.LoginRequestDTO) on controller web.Controllers.UserController (web).
+2024-06-14 10:01:10.384 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'FilmDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 10:01:11.356 +07:00 [INF] Executed DbCommand (96ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-14 10:01:11.601 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-14 10:01:11.751 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.Domain.LoginResponseDTO'.
+2024-06-14 10:01:11.775 +07:00 [INF] Executed action web.Controllers.UserController.Login (web) in 2755.3983ms
+2024-06-14 10:01:11.779 +07:00 [INF] Executed endpoint 'web.Controllers.UserController.Login (web)'
+2024-06-14 10:01:11.791 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7289/api/User/Login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8 2908.9746ms
+2024-06-14 10:01:14.292 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - -
+2024-06-14 10:01:14.301 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-14 10:01:14.312 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Read|Write)
+2024-06-14 10:01:14.326 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-14 10:01:14.327 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - - - 401 0 - 35.7013ms
+2024-06-14 10:01:19.909 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - -
+2024-06-14 10:01:19.913 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-14 10:01:19.914 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Read|Write)
+2024-06-14 10:01:19.915 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-14 10:01:19.916 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - - - 401 0 - 6.9733ms
+2024-06-14 10:01:21.691 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - -
+2024-06-14 10:01:21.693 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-14 10:01:21.694 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Read|Write)
+2024-06-14 10:01:21.695 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-14 10:01:21.695 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-All-Actors - - - 401 0 - 4.2070ms
+2024-06-14 10:01:28.341 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - -
+2024-06-14 10:01:28.344 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-14 10:01:28.346 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Read|Write)
+2024-06-14 10:01:28.346 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-14 10:01:28.347 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Directors/Get-All-Directors - - - 401 0 - 5.5842ms
+2024-06-14 10:01:37.731 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - -
+2024-06-14 10:01:37.734 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-06-14 10:01:37.736 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Read|Write)
+2024-06-14 10:01:37.737 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-14 10:01:37.737 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Films/GetAllFilms/Get-All-Films - - - 401 0 - 6.2027ms

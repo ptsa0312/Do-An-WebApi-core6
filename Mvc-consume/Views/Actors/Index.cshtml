@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <p>
-    <a asp-action="Create" asp-controller="Actors">Create New</a>
+    <a asp-action="Create" asp-controller="Actors">THÊM Actor</a>
 </p>
 <table class="table">
     <thead>
@@ -42,7 +42,6 @@
             </td>
             <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @* <a asp-action="Edit" asp-controller="Films" asp-route-id="@item.Id">edit</a> *@
                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </td>

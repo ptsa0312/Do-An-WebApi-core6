@@ -1,0 +1,16 @@
+2024-06-14 11:21:05.540 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7289/api/Actors/Get-Actor-By-Id/1 - -
+2024-06-14 11:21:05.558 +07:00 [INF] Executing endpoint 'web.Controllers.ActorsController.GetActorById (web)'
+2024-06-14 11:21:05.566 +07:00 [INF] Route matched with {action = "GetActorById", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetActorById(Int32) on controller web.Controllers.ActorsController (web).
+2024-06-14 11:21:05.572 +07:00 [INF] Entity Framework Core 6.0.30 initialized 'DataDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.30' with options: None
+2024-06-14 11:21:05.589 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[DateOfBirth], [a].[FirstName], [a].[LastName]
+FROM [Actors] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-06-14 11:21:05.598 +07:00 [INF] Executing OkObjectResult, writing value of type 'web.Models.DTO.Actors'.
+2024-06-14 11:21:05.600 +07:00 [INF] Executed action web.Controllers.ActorsController.GetActorById (web) in 28.3745ms
+2024-06-14 11:21:05.605 +07:00 [INF] Executed endpoint 'web.Controllers.ActorsController.GetActorById (web)'
+2024-06-14 11:21:05.608 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7289/api/Actors/Get-Actor-By-Id/1 - - - 200 - application/json;+charset=utf-8 67.5302ms
+2024-06-14 11:21:11.329 +07:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7289/api/Actors/Get-Actor-By-Id/1 application/json;+charset=utf-8 96
+2024-06-14 11:21:11.334 +07:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-06-14 11:21:11.339 +07:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-06-14 11:21:11.341 +07:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7289/api/Actors/Get-Actor-By-Id/1 application/json;+charset=utf-8 96 - 405 0 - 11.7942ms
